@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import config from "./src/configs/server.js";
-import corsOptions from "./src/configs/cors.js";
-import connectToDB from "./src/db/db.js";
-import ProductRoutes from "./src/routes/products.js"
+import config from "../configs/server.js";
+import corsOptions from "../configs/cors.js";
+import connectToDB from "../db/db.js";
+import ProductRoutes from "../routes/products.js"
 const app = express();
 
 (async () => {
@@ -26,3 +26,5 @@ app.use("/", ProductRoutes);
 app.listen(config.appPort, () => {
     console.log(`Server running on port ${config.appPort}`);
 });
+
+export default app;
